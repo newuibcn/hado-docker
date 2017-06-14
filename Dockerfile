@@ -1,4 +1,5 @@
 FROM node:6.9.5
+
 RUN npm install -g bower
 COPY package.json /usr/app/package.json
 COPY bower.json /usr/app/bower.json
