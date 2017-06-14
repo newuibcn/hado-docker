@@ -1,4 +1,5 @@
 FROM node:6.9.5
 RUN npm install -g bower
 RUN npm install
-RUN bower install --allow-root
+RUN echo '{ "allow_root": true }' > /root/.bowerrc
+RUN bower install
