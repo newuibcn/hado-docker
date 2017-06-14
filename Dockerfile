@@ -1,7 +1,9 @@
 FROM node:6.9.5
 RUN npm install -g bower
 COPY package.json /usr/app/package.json
-RUN  cd /usr/app && npm install
-COPY . /usr/app
+COPY bower.json /usr/app/bower.json
+RUN  cd /usr/app
+RUN npm install
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN bower install
+COPY . /usr/app
